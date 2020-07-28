@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -35,4 +36,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+publish {
+    userOrg = 'shaohangxing'
+    groupId = 'com.yui.library'
+    artifactId = 'permissionx'
+    publishVersion = '1.0.0'
+    desc = 'Make Android runtime permission request easy.'
+    website = 'https://github.com/YuiSama165cm/PermissionX'
 }
